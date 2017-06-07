@@ -43,4 +43,7 @@ public class Pokemon {
 	 public int getACC(){
 	     return ACC;   
 	 }
+	 public void setHP(int newHP) {
+		 HP = newHP;
+	 }
 }

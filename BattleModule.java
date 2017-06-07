@@ -14,14 +14,21 @@ public class BattleModule extends Pokemon {
 		public void DamageAttack(Pokemon other) {
 			if(this.isHit(other)) {
 				if(this.isCritical(other)) {
+					//an effective attack deals double damage
+					//"It's super effective!!!"
 					//code
 				}
 				else if(this.isIneffective(other)) {
-					
+					//an ineffective attack deals half damage
 				}
 				else {
 					
 				}
+			}
+			else {
+				//we need to find a way to implement messages
+				//like this one into the UI
+				System.out.println(this.getName() + " missed!");
 			}
 		}
 
@@ -83,6 +90,5 @@ public class BattleModule extends Pokemon {
 				return false;
 			}
 			else return false;
-		}
 		}
 }
