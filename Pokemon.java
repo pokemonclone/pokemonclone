@@ -22,7 +22,7 @@ public class Pokemon {
 		Type = "Normal";
 		HP = 100;
 		ATK = 25;
-		AGI = 5;
+		AGI = 10;
 		ACC = 85;
 	}
 	 public String getName(){
@@ -43,7 +43,13 @@ public class Pokemon {
 	 public int getACC(){
 	     return ACC;   
 	 }
-	 public void setHP(int newHP) {
-		 HP = newHP;
+	 public void subtractHP(int damage) {
+		 HP -= damage;
+	 }
+	 public void subtractAGI(int damage) {
+		 AGI -= damage;
+	 }
+	 public void subtractATK(int damage) {
+		 ATK -= damage;
 	 }
 }
