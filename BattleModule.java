@@ -149,6 +149,19 @@ public class BattleModule extends Pokemon {
 			System.out.println(this.getName() + " had their HP restored!");
 		}
 		
+		public void SandAttack(Pokemon other) {
+			if(this.isHit(other)) {
+				other.subtractACC(this.getATK()/2);
+			}
+			else {
+				/* MISS CONDITION: NO DAMAGE DEALT */
+				
+				//we need to find a way to implement messages
+				//like this one into the UI
+				System.out.println(this.getName() + " missed!");
+			}
+		}
+		
 		public boolean isHit(Pokemon other) {
 			int z = 100 - (this.getACC() - other.getAGI());
 			if(((int)(Math.random() * 100)) <= z) {
