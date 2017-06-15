@@ -13,7 +13,7 @@ public class BattleModule extends Pokemon {
 	 */
 		public void NormalAttack(Pokemon other) {
 			if(this.isHit(other)) {
-					other.subtractHP(this.getATK());
+					other.subtractHP(this.getATK() + 5);
 			}
 			else {
 				/* MISS CONDITION: NO DAMAGE DEALT */
@@ -111,6 +111,7 @@ public class BattleModule extends Pokemon {
 		public void Leer(Pokemon other) {
 			if(this.isHit(other)) {
 				other.subtractAGI(this.getATK()/2);
+				System.out.println(other.getName() + " had their AGILITY decreased!!!");
 			}
 			else {
 				/* MISS CONDITION: NO DAMAGE DEALT */
@@ -124,12 +125,14 @@ public class BattleModule extends Pokemon {
 		public void  BuffATK() {
 			//increases ATK by 5 (subtracts a negative)
 			this.subtractATK(-5);
+			System.out.println(this.getName() + " increased their ATTACK!!!");
 		}
 		
 		public void Growl(Pokemon other) {
 			if(this.isHit(other)) {
 				//decreases opponent's attack by a fourth of attacker's ATK
 				other.subtractATK(this.getATK()/4);
+				System.out.println(other.getName() + " had their ATTACK decreased!!!");
 			}
 			else {
 				/* MISS CONDITION: NO DAMAGE DEALT */
@@ -138,6 +141,12 @@ public class BattleModule extends Pokemon {
 				//like this one into the UI
 				System.out.println(this.getName() + " missed!");
 			}
+		}
+
+		public void Potion() {
+			//Increases HP by 20 (subtracts a negative)
+			this.subtractHP(-20);
+			System.out.println(this.getName() + " had their HP restored!");
 		}
 		
 		public boolean isHit(Pokemon other) {
