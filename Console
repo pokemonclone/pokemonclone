@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Console {
+	private static Scanner input;
+	public static void main(String[] args){
+		String p1;
+		String p2;
+		String n1;
+		String n2;
+		input = new Scanner (System.in);
+		System.out.println("Player 1, what is your Pokemons type?:");
+		p1= input.next();
+		System.out.println("Player 2, what is your Pokemons type?:");
+		p2= input.next();
+		System.out.println("Player 1, what is your Pokemons name?:");
+		n1= input.next();
+		System.out.println("Player 2, what is your Pokemons name?:");
+		n2= input.next();
+	}
+}
